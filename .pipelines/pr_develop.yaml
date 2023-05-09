@@ -23,6 +23,16 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    sudo apt-get update
+    sudo apt-get install zip -y
+    sudo apt-get install g++-aarch64-linux-gnu -y
+    sudo apt-get install gcc-aarch64-linux-gnu -y
+    sudo apt-get install cmake -y
+    sudo apt-get install cppcheck
+    ls
+  displayName: 'Install sofwares'
+
+- script: |
+    echo STARTING sec scanning
+    cppcheck --enable=all main.cpp
+  displayName: 'Run Security Scanning'
