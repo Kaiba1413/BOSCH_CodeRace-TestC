@@ -34,5 +34,13 @@ steps:
 
 - script: |
     echo STARTING sec scanning
-    cppcheck --enable=all main.cpp
+    cppcheck --enable=all main.cpp > scanning_log.txt
+    grep "warning" scanning_log.txt
+    echo Done Grepping
+    if [$? -eq 0]
+    then 
+      exit 1 
+    else 
+      echo no vulnerabilities
+    fi
   displayName: 'Run Security Scanning'
