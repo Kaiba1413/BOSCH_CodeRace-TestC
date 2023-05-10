@@ -37,10 +37,6 @@ steps:
     cppcheck --enable=all main.cpp > scanning_log.txt
     grep "warning" scanning_log.txt
     echo Done Grepping
-    if [$? -eq 0]
-    then 
-      exit 1 
-    else 
-      echo no vulnerabilities
-    fi
+    chmod u+x process_sec_scanning_output.sh
+    ./process_sec_scanning_output.sh
   displayName: 'Run Security Scanning'
