@@ -27,24 +27,26 @@ steps:
     sudo apt-get install zip -y
     sudo apt-get install build-essential -y
     sudo apt-get install cmake -y
-    sudo apt-get install cppcheck
+    sudo apt-get update
+    sudo apt-get install cppcheck -y
     ls
     gcc --version
   displayName: 'Install sofwares'
 
-#- script: |
-#    echo STARTING sec scanning
-#    cppcheck --enable=all main.cpp > scanning_log.txt
-#    grep "warning" scanning_log.txt
-#    echo Done Grepping
-#    chmod u+x process_sec_scanning_output.sh
-#    ./process_sec_scanning_output.sh
-#  displayName: 'Run Security Scanning'
-
 - script: |
-    sudo apt-get install -y clang
-    clang --version
-    clang -g -O1 -fsanitize=address,fuzzer fuzzing_applications.cpp -o fuzzing_applications.out
-    ls
-    ./fuzzing_applications.out -timeout=120
-  displayName: 'Install Fuzzing Tool'
+    echo STARTING sec scanning
+    mkdir build
+    cppcheck --cppcheck-build-dir=build --enable=all . > scanning_log.txt
+    grep "warning" scanning_log.txt
+    echo Done Grepping
+    chmod u+x process_sec_scanning_output.sh
+    ./process_sec_scanning_output.sh
+  displayName: 'Run Security Scanning'
+
+#- script: |
+#    sudo apt-get install -y clang
+#    clang --version
+#    clang -g -O1 -fsanitize=address,fuzzer fuzzing_applications.cpp -o fuzzing_applications.out
+#    ls
+#    ./fuzzing_applications.out -timeout=10
+#  displayName: 'Install Fuzzing Tool'
