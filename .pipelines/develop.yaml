@@ -25,18 +25,15 @@ steps:
     echo install Flawfinder
     pip install flawfinder
     sudo apt-get -y install afl
-
   displayName: 'install Flawfinder and AFL'
 
 
 - script: |
     echo Run Flawfinder
     flawfinder .pipelines
-
   displayName: 'Run Flawfinder'
 
 - script: |
     echo Run AFL
     afl-fuzz -i .pipelines -o output_dir -- .pipelines/to/target
-
   displayName: 'Run AFL'
