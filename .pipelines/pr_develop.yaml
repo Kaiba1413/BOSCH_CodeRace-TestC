@@ -42,5 +42,5 @@ steps:
 
 - script: |
     echo Run libfuzzer
-    ./.pipelines/fuzz_target -max_total_time=60 -artifact_prefix=./.pipelines/crash_dir/ -max_len=2048 ./.pipelines/corpus_dir1.
+    ./fuzz_target -max_total_time=60 -artifact_prefix=./fuzz_target/ -max_len=2048 ./fuzz_target.
   displayName: 'Run libfuzzer'
