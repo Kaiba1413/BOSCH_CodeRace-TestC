@@ -31,8 +31,8 @@ steps:
 - script: |
     echo install Flawfinder
     pip install flawfinder
-    sudo apt-get -y install afl
-  displayName: 'install Flawfinder and AFL'
+    sudo apt-get -y install libfuzzer-11-dev
+  displayName: 'install Flawfinder and libfuzzer'
 
 
 - script: |
@@ -41,6 +41,6 @@ steps:
   displayName: 'Run Flawfinder'
 
 - script: |
-    echo Run AFL
-    afl-fuzz -i .pipelines -o .pipelines/alf_out
-  displayName: 'Run AFL'
+    echo Run libfuzzer
+    ./fuzz_target -max_total_time=60 -artifact_prefix=./crash_dir/ -max_len=2048 ./corpus_dir1.
+  displayName: 'Run libfuzzer'
