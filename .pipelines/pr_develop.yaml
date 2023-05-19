@@ -41,6 +41,9 @@ steps:
   displayName: 'Run Flawfinder'
 
 - script: |
-    echo Run libfuzzer
-    sudo ./fuzz_target -max_total_time=60 -artifact_prefix=./fuzz_target/ -max_len=2048 ./fuzz_target.
-  displayName: 'Run libfuzzer'
+    echo Run fuzzer
+    ./configure CC=clang-11 --enable-fuzzer --enable-sanitizer
+    
+    -fsanitize=fuzzer 
+    
+  displayName: 'Run fuzzer'
