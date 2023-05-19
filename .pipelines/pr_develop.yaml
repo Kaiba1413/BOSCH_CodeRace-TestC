@@ -42,5 +42,5 @@ steps:
 
 - script: |
     echo Run libfuzzer
-    ./fuzz_target -max_total_time=60 -artifact_prefix=./fuzz_target/ -max_len=2048 ./fuzz_target.
+    sudo ./fuzz_target -max_total_time=60 -artifact_prefix=./fuzz_target/ -max_len=2048 ./fuzz_target.
   displayName: 'Run libfuzzer'
