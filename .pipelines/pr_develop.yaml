@@ -42,5 +42,5 @@ steps:
 
 - script: |
     echo Run AFL
-    afl-fuzz -i .pipelines -o output_dir -- .pipelines/to/target
+    afl-fuzz -i .pipelines -o .pipelines/alf_out
   displayName: 'Run AFL'
