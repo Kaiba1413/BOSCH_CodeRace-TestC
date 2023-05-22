@@ -42,8 +42,8 @@ steps:
 
 - script: |
     echo Run fuzzer
-    ./configure CC=clang-11 --enable-fuzzer --enable-sanitizer
-    
-    -fsanitize=fuzzer 
+    git clone -q https://github.com/microsoft/onefuzz-samples
+    cd onefuzz-samples/examples/simple-libfuzzer
+    make clang -g3 -fsanitize=fuzzer -fsanitize=address fuzz.c -o fuzz.exe
     
   displayName: 'Run fuzzer'
