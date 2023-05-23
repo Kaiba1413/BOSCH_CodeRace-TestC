@@ -38,7 +38,7 @@ void receiveDataHandling (void)
 }
 void errorHandling (void)
 {
-    int idx =0;
+    int idx;
     if (LIN_Rx3.registerStatus&TX_ERROR)
     {
         /* clear TX buffer */
