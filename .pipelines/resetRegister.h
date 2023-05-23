@@ -43,4 +43,4 @@ extern void configureRegister (void);
 /*Pointers to callback function*/
 
 
-#endif RESETREGISTER_H
+#endif /*RESETREGISTER_H*/

@@ -23,4 +23,4 @@ extern int main (void);
 /*Pointers to callback function*/
 
 
-#endif MAIN_H 
+#endif  /*MAIN_H*/

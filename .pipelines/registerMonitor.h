@@ -47,4 +47,4 @@ extern void resetHandling (void);
 extern void rxHandling(void);
 extern void txHandling(void);
 extern void someTp(void);
-#endif REGISTERMONITOR_H
+#endif /*REGISTERMONITOR_H*/ 
