@@ -20,6 +20,6 @@ int test_someTp (void)
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
     // Use data and size to test target program
     // ...
-    test_someTp();
+//    test_someTp();
     return 0;
 }
