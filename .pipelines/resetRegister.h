@@ -18,15 +18,15 @@
 
 #define TX_ERROR  0x01
 #define RX_ERROR  0x02
-typedef struct registerCb_ST
+typedef struct 
 {
     void (* funcRxCb) (void);
     void (* funcTxCb) (void);
     void (* funcErrHandlercb) (void);
-} ;
+}registerCb_ST ;
 
 
-typedef struct RLIN_Register
+typedef struct 
 {
     /* data */
     int baseAddr;
@@ -35,7 +35,7 @@ typedef struct RLIN_Register
     int length;
     int registerStatus;
     registerCb_ST CbFunc;
-} ;
+} RLIN_Register;
 
 
 extern void configureRegister (void);

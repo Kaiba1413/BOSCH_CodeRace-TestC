@@ -37,7 +37,7 @@ extern int mirro_regBufferTx[256];
     regBufferTx,\
     dataLen,\
     regStatus,\
-    CB_FUNC,\   
+    CB_FUNC,\
 }
 
 extern void checkRegisterErr (void);

@@ -13,7 +13,7 @@
 static const cyclic_ptr c_InitJob[] =
 {
 	&configureRegister,
-}
+};
 
 
 static const cyclic_ptr c_cylicJob[] =
@@ -23,10 +23,10 @@ static const cyclic_ptr c_cylicJob[] =
 	&errorHandling,
 	&resetHandling,
 	&someTp,
-}
+};
 
 
-void main (void)
+int main (void)
 {
 	unsigned int index =0;
 	
