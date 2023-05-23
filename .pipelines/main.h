@@ -17,7 +17,7 @@
 
 typedef void (*cyclic_ptr)(void);
 
-void _main (void);
+void main (void);
 /*Pointers to callback function*/
 
 

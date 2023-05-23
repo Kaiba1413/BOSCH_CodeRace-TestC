@@ -26,7 +26,7 @@ static const cyclic_ptr c_cylicJob[] =
 }
 
 
-void _main (void)
+void main (void)
 {
 	unsigned int index =0;
 	
