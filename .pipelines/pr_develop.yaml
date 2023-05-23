@@ -29,21 +29,22 @@ steps:
 
 
 - script: |
-    echo install Flawfinder
-    pip install flawfinder
-    sudo apt-get -y install libfuzzer-11-dev
-  displayName: 'install Flawfinder and libfuzzer'
-
+    sudo apt-get update
+    sudo apt-get install zip -y
+    sudo apt-get install build-essential -y
+    sudo apt-get install cmake -y
+    sudo apt-get update
+    sudo apt-get install cppcheck -y
+    ls
+    gcc --version
+  displayName: 'Install sofwares'
 
 - script: |
-    echo Run Flawfinder
-    flawfinder .pipelines
-  displayName: 'Run Flawfinder'
-
-- script: |
-    echo Run fuzzer
-    git clone -q https://github.com/microsoft/onefuzz-samples
-    cd onefuzz-samples/examples/simple-libfuzzer
-    make clang -g3 -fsanitize=fuzzer -fsanitize=address fuzz.c -o fuzz.exe
-    
-  displayName: 'Run fuzzer'
+    echo STARTING sec scanning
+    mkdir build
+    cppcheck --cppcheck-build-dir=build --enable=all . > scanning_log.txt
+    grep "warning" scanning_log.txt
+    echo Done Grepping
+    chmod u+x process_sec_scanning_output.sh
+    ./process_sec_scanning_output.sh
+  displayName: 'Run Security Scanning'

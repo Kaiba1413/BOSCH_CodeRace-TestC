@@ -35,7 +35,9 @@ void _main (void)
 		c_InitJob[index]();
 		index++;
 	}
+	/* reset index to prepare for cyclic task*/
 	index = 0;
+	/* running cyclic task*/
 	while (true)
 	{
 		/* Running cylic Jobs */
