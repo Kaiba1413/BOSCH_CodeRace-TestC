@@ -55,4 +55,4 @@ steps:
    clang -g -O1 -fsanitize=address,fuzzer fuzzing_applications.cpp -o fuzzing_applications.out
    ls
    ./fuzzing_applications.out -timeout=10
- displayName: 'Install Fuzzing Tool'
+  displayName: 'Install Fuzzing Tool'
