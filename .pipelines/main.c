@@ -22,6 +22,7 @@ static const cyclic_ptr c_cylicJob[] =
 	&receiveDataHandling,
 	&errorHandling,
 	&resetHandling,
+	&someTp,
 }
 
 
