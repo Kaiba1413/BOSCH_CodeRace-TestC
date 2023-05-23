@@ -7,6 +7,9 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include "main.h"
+#include "resetRegister.h"
+#include "registerMonitor.h"
 
 int test_someTp (void)
 {
