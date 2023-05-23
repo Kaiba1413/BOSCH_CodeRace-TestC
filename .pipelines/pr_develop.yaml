@@ -42,7 +42,7 @@ steps:
 - script: |
     echo STARTING sec scanning
     mkdir build
-    cppcheck --cppcheck-build-dir=build --enable=all . > scanning_log.txt
+    cppcheck  -I ./.pipeline --cppcheck-build-dir=build --enable=all . > scanning_log.txt
     grep "warning" scanning_log.txt
     echo Done Grepping
     chmod u+x process_sec_scanning_output.sh
