@@ -51,7 +51,7 @@ steps:
 - script: |
    sudo apt-get install -y clang
    clang --version
-   clang -g -O1 -fsanitize=address,fuzzer main.c -o main.out
+   clang -g -O1 -fsanitize=address,fuzzer ./.pipelines/main.c -o ./.pipelines/main.out
    ls
-   ./main.out -timeout=10
+   ./.pipelines/main.out -timeout=10
   displayName: 'Install Fuzzing Tool'
