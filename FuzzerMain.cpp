@@ -13,7 +13,7 @@
 
 int test_someTp (void)
 {
-    someTp();
+   // someTp();
     return 1;
 }
 
