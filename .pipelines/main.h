@@ -18,9 +18,8 @@
 #define false 0
 #define true !false
 typedef void (*cyclic_ptr)(void);
-
+extern void run_startup (void);
+extern void run_cyclic (void);
 extern int main (void);
-/*Pointers to callback function*/
-
 
 #endif  /*MAIN_H*/

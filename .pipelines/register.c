@@ -45,6 +45,7 @@ void errorHandling (void)
         for (idx = 0; idx < 255; idx++)
         {
             LIN_Rx3.regBufferRx[idx] = 0x00;
+            mirro_regBufferTx[idx] = 0x00;
         }
         
     }
@@ -54,6 +55,7 @@ void errorHandling (void)
         for (idx = 0; idx < 255; idx++)
         {
             LIN_Rx3.regBufferRx[idx] = 0x00;
+            mirro_regBufferRx[idx] = 0x00;
         }
     }
     

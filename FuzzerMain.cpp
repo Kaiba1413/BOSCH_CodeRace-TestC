@@ -17,8 +17,8 @@ int test_someTp (void)
     return 1;
 }
 
-extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
-    // Use data and size to test target program
+extern "C" int LLVMFuzzerInitialize(int *argc, char ***argv) {
+    // Perform any necessary initialization here
     // ...
     test_someTp();
     return 0;

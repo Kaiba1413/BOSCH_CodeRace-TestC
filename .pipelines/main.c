@@ -26,27 +26,41 @@ static const cyclic_ptr c_cylicJob[] =
 };
 
 
-int main (void)
+
+void run_startup (void)
 {
 	unsigned int index =0;
-	
 	/* Running starting Jobs */
 	while (c_InitJob[index] !=NULL)
 	{
 		c_InitJob[index]();
 		index++;
 	}
-	/* reset index to prepare for cyclic task*/
-	index = 0;
+	return;
+}
+
+void run_cyclic (void)
+{
+	unsigned int index =0;
+	/* Running cylic Jobs */
+	while (c_cylicJob[index] !=NULL)
+	{
+		c_cylicJob[index]();
+		index++;
+	}
+
+	return;
+}
+
+int main (void)
+{
+	/* running startup task*/
+	run_startup();
+
 	/* running cyclic task*/
 	while (true)
 	{
-		/* Running cylic Jobs */
-		while (c_cylicJob[index] !=NULL)
-		{
-			c_cylicJob[index]();
-			index++;
-		}
+		run_cyclic();
 	}
 		
 }
