@@ -34,7 +34,7 @@ extern int mirro_regBufferTx[256];
 {  \
     baseAddr,\
     regBufferRx,\
-    regBufferTx,
+    regBufferTx,\
     dataLen,\
     regStatus,\
     CB_FUNC,\   
